@@ -1,6 +1,6 @@
 export interface IMeal{
     id?: string;
-    mealTime: string;
+    time: string;
     description: string;
     calories: number;
 }
