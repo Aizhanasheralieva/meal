@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import "./Toolbar.css";
 
 const Toolbar = () => {
   return (
@@ -10,6 +11,20 @@ const Toolbar = () => {
               Calorie Tracker
             </span>
           </NavLink>
+          <div className="ms-auto">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/add">
+                  Meal Form
+                </NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </>
