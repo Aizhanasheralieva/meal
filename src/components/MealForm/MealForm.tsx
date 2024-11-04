@@ -15,7 +15,7 @@ interface Props {
   isLoading?: boolean;
 }
 
-const MealForm: React.FC<Props> = ({ meal, isEdit = false, addNewMeal, existingMeal = initialState, isLoading = false }) => {
+const MealForm: React.FC<Props> = ({ meal, isEdit = false, existingMeal = initialState, isLoading = false }) => {
   const [form, setForm] = useState<IMeal>(meal || initialState);
   const navigate = useNavigate();
 
@@ -25,8 +25,8 @@ const MealForm: React.FC<Props> = ({ meal, isEdit = false, addNewMeal, existingM
       await axiosApi.put(`/meals/${meal.id}.json`, form);
     } else {
       await axiosApi.post("/meals.json", form);
+      toast.success("Meal successfully added");
       navigate("/");
-      toast.success("Meal successfully updated");
     }
     setForm(initialState);
   };
